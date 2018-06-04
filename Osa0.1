@@ -1,0 +1,29 @@
+title Muistiinpanojen sivut, t.0.3
+kayttaja->selain:
+note left of selain
+käyttäjä painaa "muistiinpanot" linkkiä
+end note
+
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
+palvelin->selain: status OK, sivun HTML-koodi
+
+
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin->selain: status OK, sivun css-koodi
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.js
+palvelin->selain: status OK, sivun JS-koodi
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin->selain: status OK, sivun JSON-data
+
+note left of palvelin
+    Muodostetaan HTML missä json-data, css-muotoilu ja js-koodi
+end note
+
+note left of selain
+    Selain näyttää palvelimen palauttaman HTML:n
+    johon on upotettu palvelimelta haettu css ja JSON-data
+end note
